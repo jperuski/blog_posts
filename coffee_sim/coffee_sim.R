@@ -117,18 +117,18 @@ savings.plot1 <- ggplot(savings.data[month <= 120], aes(x = month, mean)) +
   geom_line(colour = "blue4") +
   geom_ribbon(aes(ymin = lcb, ymax = ucb), alpha = 0.15) +
   geom_line(data = avg.results[month <= 120], aes(x = month, y = cumulative.coffee), colour = "red4") +
-  xlab("Cost ($)") + ggtitle("10 year Cost + Returns")
+  ylab("Cost ($)") + xlab("Months") + ggtitle("10 year Cost + Returns")
 
 savings.plot2 <- ggplot(savings.data, aes(x = month, mean)) +
   geom_line(colour = "blue4") +
   geom_ribbon(aes(ymin = lcb, ymax = ucb), alpha = 0.15) +
   geom_line(data = avg.results, aes(x = month, y = cumulative.coffee), colour = "red4")+
-  xlab("Cost ($)") + ggtitle("20 year Cost + Returns")
+  ylab("Cost ($)") + xlab("Months") + ggtitle("20 year Cost + Returns")
 
 return.plot <- ggplot(return.data, aes(x = month, mean)) +
   geom_line(colour = "green4") +
   geom_ribbon(aes(ymin = lb, ymax = ub), alpha = 0.15) +
-  xlab("RoR (%)") + ggtitle("Rate of  Returns")
+  ylab("RoR (%)") + xlab("Months") + ggtitle("Rate of  Returns")
 
 
 grid.arrange(savings.plot1, savings.plot2, return.plot, nrow = 3, ncol = 1)
